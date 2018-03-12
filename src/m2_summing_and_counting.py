@@ -116,7 +116,7 @@ def sum_more_cosines(m, n):
 def run_test_count_sines_from():
     """ Tests the   count_sines_from   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  count_sines_from  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -209,7 +209,7 @@ def count_sines_from(m, n):
 def run_test_count_sines_vs_cosines():
     """ Tests the   count_sines_vs_cosines   function. """
     # ------------------------------------------------------------------
-    # DONE: 6. Implement this TEST function.
+    # TO DO: 6. Implement this TEST function.
     #   It TESTS the  count_sines_vs_cosines  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -224,6 +224,40 @@ def run_test_count_sines_vs_cosines():
     # Test 1:
     expected = 100
     answer = count_sines_vs_cosines(101)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 2:
+    expected = 6
+    answer = count_sines_vs_cosines(5)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+
+
+    # Test 3:
+    expected = 4
+    answer = count_sines_vs_cosines(3)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 0
+    answer = count_sines_vs_cosines(0)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+
+
+    # Test 5:
+    expected = 1
+    answer = count_sines_vs_cosines(1)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 6:
+    expected = 2
+    answer = count_sines_vs_cosines(2)
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
@@ -265,7 +299,12 @@ def count_sines_vs_cosines(m):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
+    count = 0
+    for k in range(m+1):
+        if math.sin(k) > math.cos(k):
+            count = count + 1
 
+    return count
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
