@@ -108,8 +108,8 @@ def sum_more_cosines(m, n):
     #   Reason: To ensure that you get more practice using variables.
     # ------------------------------------------------------------------
     sum = 0
-    for k in range(n-m+1):
-        sum = sum + math.cos(m+k)
+    for k in range(m, n+1):
+        sum = sum + math.cos(k)
 
     return sum
 
