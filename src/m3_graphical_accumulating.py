@@ -132,13 +132,19 @@ def run_test_draw_lines():
 
     # TWO tests on ONE window.
     title = 'Tests 1 & 2 of DRAW_LINES:  4 lines, 12 lines!'
-    window1 = rg.RoseWindow(350, 400, title)
 
+
+    window1 = rg.RoseWindow(350, 400, title)
+    #Test 1
     draw_lines(4, rg.Point(20, 120), window1)
+
+    #Test 2
     draw_lines(12, rg.Point(150, 230), window1)
     window1.close_on_mouse_click()
 
+
     # A third test on ANOTHER window.
+    #Test 3
     window2 = rg.RoseWindow(350, 300, 'Test 3 of DRAW_LINES:  7 lines!')
     draw_lines(7, rg.Point(50, 120), window2)
     window2.close_on_mouse_click()
@@ -185,6 +191,15 @@ def draw_lines(n, point, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
+
+    for k in range(n):
+        start = rg.Point(point.x, point.y)
+        end = rg.Point(start.x + 100, start.y + 100*(-1*k))
+        line = rg.Line(start,end)
+        line.attach_to(window)
+
+    window.render()
+
 
 
 # ----------------------------------------------------------------------
