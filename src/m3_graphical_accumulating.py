@@ -9,11 +9,11 @@ Additionally, it emphasizes that you must
 before you can implement a solution to the problem in Python.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mariah Mufich.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
-
+import math
 
 # ----------------------------------------------------------------------
 # Students: As you work each of these problems, ask yourself:
@@ -46,6 +46,7 @@ def run_test_draw_parallel_lines():
     title = title + '  4 long lines, 7 short lines'
     window1 = rg.RoseWindow(600, 350, title)
 
+
     # Test 1:
     left_most_point = rg.Point(400, 50)
     draw_parallel_lines(7, left_most_point, 100, window1)
@@ -54,6 +55,7 @@ def run_test_draw_parallel_lines():
     left_most_point = rg.Point(50, 200)
     draw_parallel_lines(4, left_most_point, 300, window1)
     window1.close_on_mouse_click()
+
 
     # ------------------------------------------------------------------
     # A third test on ANOTHER window.
@@ -96,7 +98,7 @@ def draw_parallel_lines(n, point, length, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -109,7 +111,16 @@ def draw_parallel_lines(n, point, length, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
+    x = point.x
+    y = point.y
+    for k in range(n):
+        start = rg.Point(x,y)
+        end = rg.Point(start.x + length, start.y)
+        line = rg.Line(start,end)
+        line.attach_to(window)
+        y = y + 30
 
+    window.render()
 
 def run_test_draw_lines():
     """ Tests the   draw_lines  function. """
