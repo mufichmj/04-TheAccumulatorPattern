@@ -147,7 +147,7 @@ def run_test_draw_circles_from_rectangle():
     rectangle.fill_color = 'pink'
     rectangle.outline_color = "black"
     rectangle.outline_thickness = 5
-    draw_circles_from_rectangle(4, 5, rectangle, window)
+    draw_circles_from_rectangle(4, 5, rectangle, window1)
 
 
     # Test 2:
@@ -155,7 +155,7 @@ def run_test_draw_circles_from_rectangle():
     rectangle.fill_color = 'pink'
     rectangle.outline_color = 'green'
     rectangle.outline_thickness = 5
-    draw_circles_from_rectangle(8, 3, rectangle_2, window)
+    draw_circles_from_rectangle(8, 3, rectangle, window1)
 
     window1.close_on_mouse_click()
 
@@ -166,7 +166,7 @@ def run_test_draw_circles_from_rectangle():
     rectangle.fill_color = "blue"
     rectangle.outline_color = "black"
     rectangle.outline_thickness = 5
-    draw_circles_from_rectangle(6, 10, rectangle_3, window)
+    draw_circles_from_rectangle(6, 10, rectangle, window2)
 
     window2.close_on_mouse_click()
 
@@ -227,9 +227,6 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     outline_color = rectangle.outline_color
     fill_color = rectangle.fill_color
 
-    x = circle.center.x
-    y = circle.center.y
-
     height = rectangle.get_height()
     width = rectangle.get_width()
     center = rectangle.get_center()
@@ -249,7 +246,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
         circle.fill_color = fill_color
         circle.attach_to(window)
 
-        x1 = x1 - (rad1 * 2)
+        x1 = x1 - (radius1 * 2)
 
     for _ in range(n):
         center_2 = rg.Point(x2, y2)
